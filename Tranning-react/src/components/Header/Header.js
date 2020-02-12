@@ -5,9 +5,9 @@ class Header extends Component {
     render() {
         console.log('run header');
         return(
-            <div className='wrapHeader'>
-                Header component
-            </div>
+            <header className="my-header">
+                <h1 className="title">This is header</h1>
+            </header>
         )
     }
 }
