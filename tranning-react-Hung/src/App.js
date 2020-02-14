@@ -3,7 +3,7 @@ import './App.css';
 import Header from "./components/Header/Header";
 import Container from "./components/Container/Container";
 import Footer from "./components/Footer/Footer";
-import Product from "./components/Product/Product";
+import Product from "./components/Todo/Todo";
 
 class App extends Component {
   render() {
