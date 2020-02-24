@@ -1,0 +1,129 @@
+.site-content {
+  width: 880px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+
+  .banner {
+    width: 870px;
+    height: 180px;
+    border: 5px solid #E7746F;
+    margin-top: 20px;
+    background: transparent url("banner.jpg");
+  }
+
+  .sidebar-container {
+    float: right;
+    width: 224px;
+    height: 553px;
+    padding-bottom: 50px;
+
+    .sidebar {
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      margin-top: 16px;
+
+      .sidebar-top {
+        width: 222px;
+        height: 14px;
+        background: transparent;
+      }
+
+      .sidebar-item {
+        font-size: 13px;
+        padding: 0 15px;
+        margin-left: px;
+        width: 192px;
+        display: block;
+
+        h3 {
+          padding: 5px 0 0 0;
+          font: normal 170% 'century gothic', arial;
+          color: #E7746F;
+        }
+
+        h4 {
+          color: #009FBC;
+          padding: 10px 0 5px 0;
+          font: normal 110% arial;
+          text-transform: uppercase;
+        }
+
+        h5 {
+          color: #888;
+          font: normal 95% arial;
+          letter-spacing: normal;
+          padding: 0 0 15px 0;
+
+          p {
+            padding: 0 0 20px 0;
+            line-height: 3em;
+
+            a {
+              color: #009FBC;
+              text-decoration: none;
+            }
+          }
+        }
+
+        ul {
+          margin: 20px 0 22px 17px;
+
+          li {
+            list-style-type: none;
+            background: url(bullet.png) no-repeat;
+            margin: 0 0 0 0;
+            padding: 0 0 4px 25px;
+            line-height: 1.5em;
+          }
+        }
+
+        .search {
+          border: 1px solid #BBB;
+          width: 134px;
+          padding: 4px;
+          float: left;
+        }
+
+      }
+
+      .sidebar-base {
+        width: 222px;
+        height: 25px;
+        background: transparent;
+      }
+    }
+  }
+
+  .content {
+    text-align: left;
+    width: 620px;
+    left: 520px;
+    font-size: 13px;
+    margin-top: 60px;
+    float: left;
+
+    h1, h2 {
+      font: normal 170% 'century gothic', arial;
+      color: #E7746F;
+      line-height: 10px;
+
+      p {
+        padding-top: 60px;
+        line-height: 20px;
+        color: #7e92b0;
+      }
+    }
+
+    ul {
+      margin: 2px 0 22px 0px;
+
+      li {
+        list-style-type: none;
+        background: url(bullet.png) no-repeat;
+        padding: 0 0 4px 25px;
+        line-height: 1.5em;
+      }
+    }
+  }
+}
