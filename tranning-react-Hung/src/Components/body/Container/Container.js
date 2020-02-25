@@ -1,37 +1,97 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import image from "./search.png";
 import './Container.scss'
 
-const list = ['a', 'b', 'c'];
 
 class Container extends Component {
     constructor(props) {
         super(props);
         this.state = {
             value: '',
-            list,
+            item: {},
+            list: [
+                {
+                    id: 1,
+                    name: 'Jone',
+                    age: 20,
+                    email: 'jone67@gmail.com',
+                    address: 'London'
+                },
+                {
+                    id: 2,
+                    name: 'Emma',
+                    age: 20,
+                    email: 'prettyemma@gmail.com',
+                    address: 'USA'
+                },
+                {
+                    id: 3,
+                    name: 'Frank',
+                    age: 20,
+                    email: 'shameless@gmail.com',
+                    address: 'USA'
+                }
+            ],
         };
     }
+    onRemoveItem = ((id) => {
+        this.setState(state => {
+            const list = state.list.filter(item => item.id !== id);
+            return {
+                list,
+            };
+        });
+    });
     onChangeValue = event => {
         this.setState({ value: event.target.value });
     };
-    onAddItem = () => {
+    onChange = (event) => {
+        // lay ra prop "name" va value cua the input
+        const {name, value} = event.target;
+        // luu cac value vao state.item
         this.setState(state => {
-            const list = state.list.concat(state.value);
-            return {
-                list,
-                value: '',
-            };
+            return(
+                {...state, item: {...state.item, [name]: value}}
+                );
+        });
+    }
+    onChangeId = event => {
+        this.setState({ id: event.target.id });
+    };
+
+
+
+    onAddItem = () => {
+        let newList = [...this.state.list];
+        newList.push(this.state.item);
+        this.setState(state => {
+            return({...state, list:[...newList], item: {}})
         });
     };
-    onClearArray = () => {
-        this.setState({ list: [] });
-    };
+    // onAddItem = () => {
+    //     // copy du lieu tu state.list ra 1 bien moi
+    //     let newList = [...this.state.list];
+    //     // day item đang thao tác và list mới
+    //     newList.push(this.state.item);
+    //     // thay state.list cũ bằng list mới và reset lại state.item
+    //     this.setState(state => {
+    //         return ({ ...state , list: [...newList],item: {}})
+    //     });
+    // };
+    // onClearArray = () => {
+    //     this.setState({ students: [] });
+    // };
     onResetArray = () => {
-        this.setState({ list });
+        this.setState( state =>{
+            return (state.list)
+        });
     };
 
     render() {
+        const {list, value} = this.state;
+
+        console.log(this.state);
+
         return (
             <div className="site-content">
                 <div className="banner"></div>
@@ -90,25 +150,48 @@ class Container extends Component {
 
                     <ul>
                         {this.state.list.map(item => (
-                            <li key={item}>{item}</li>
+                            <li key={item.id}>
+                                <strong>ID: </strong> {item.id}
+                                <br/>
+                                <strong>name: </strong> {item.name}
+                                <br/>
+                                <strong>age: </strong> {item.age} years old.
+                                <br/>
+                                <strong>email :</strong> {item.email}
+                                <br/>
+                                <strong>name :</strong> {item.address}
+                                <br/>
+                                <button
+                                    type="button"
+                                    onClick={() => this.onRemoveItem(item.id)}
+                                >
+                                    Remove
+                                </button>
+                            </li>
                         ))}
                     </ul>
-                    <input
-                        type="text"
-                        value={this.state.value}
-                        onChange={this.onChangeValue}
-                    />
-                    <br/>
-                    <br/>
-                    <button type="button" onClick={this.onAddItem} disabled={!this.state.value}>
-                        Add
-                    </button>
-                    <br/>
-                    <br/>
-                    <button type="button" onClick={this.onClearArray}>
-                        Clear Array
-                    </button>
-                    <br/>
+                    <form value={this.state.value}
+                          onChange={this.onChangeValue} >
+                        <label>
+                            id:<br/>
+                            <input type="text" id={this.state.id} name="id" onChange={this.onChange}/>
+                            <br/>name:<br/>
+                            <input type="text" name={this.state.name} name="name" onChange={this.onChange}/>
+                            <br/>age:<br/>
+                            <input type="text" age={this.state.age} name="age" onChange={this.onChange}/>
+                            <br/>email:<br/>
+                            <input type="text" email={this.state.email} name="email" onChange={this.onChange}/>
+                            <br/>address: <br/>
+                            <input type="text" address={this.state.address} name="address" onChange={this.onChange}/>
+                        </label><br/>
+                        <br/>
+                        <button type="button" onClick={this.onAddItem} disabled={!this.state.value}>
+                            Add
+                        </button>
+                    </form>
+                    {/*<button type="button" onClick={this.onClearArray}>*/}
+                    {/*    Clear Array*/}
+                    {/*</button>*/}
                     <br/>
                     <button type="button" onClick={this.onResetArray}>
                         Reset Array
