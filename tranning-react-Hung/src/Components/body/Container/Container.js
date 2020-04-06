@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import image from "./search.png";
 import './Container.scss'
 
+
 const defaultList = [
     {
         id: 1,
