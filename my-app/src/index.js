@@ -20,6 +20,7 @@ class App extends Component{
     }
 }
 render(
+    //cung cap store cho nhung component con
     <Provider store={store}>
         <App/>
     </Provider>, document.getElementById('root')

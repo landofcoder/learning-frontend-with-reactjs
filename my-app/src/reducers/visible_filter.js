@@ -1,4 +1,4 @@
-export  default (state = 'SHOW_ALL', action) => {
+export  default (state = 'SHOW_LIST', action) => {
     switch (action.type) {
         case 'VISIBLE_FILTER':
             return action.filter;

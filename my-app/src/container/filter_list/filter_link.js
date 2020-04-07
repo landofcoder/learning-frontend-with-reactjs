@@ -21,5 +21,5 @@ class Filter_link extends Component{
 Filter_link.protoType = {
     filter_text: PropTypes.string.isRequired
 };
-
+// FilterLink có thể gọi được action setVisibleFilter thông qua props của nó
 export default connect(null, {setVisibleFilter})(Filter_link)

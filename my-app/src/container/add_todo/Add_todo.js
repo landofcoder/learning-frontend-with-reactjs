@@ -22,5 +22,5 @@ class AddTodo extends Component{
         )
     }
 }
-
-export default connect(null,{addTodo})(AddTodo);
+//AddTodo có thể gọi được action addTodo thông qua props của nó
+export default connect(null,{addTodo})(AddTodo); //connect den store

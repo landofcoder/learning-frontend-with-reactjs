@@ -4,14 +4,14 @@ import Todo from './todo'
 
 const filter = (todos,filter) => {
     switch (filter) {
-        case 'SHOW_ALL':
+        case 'SHOW_LIST':
             return todos;
-        case 'SHOW_ACTIVE':
+        case 'LIST_ACTIVE':
             return {
-                todos: todos.todos.filter(todo => !todo.completed),
+                todos: todos.todos.filter(todo => !todo.completed), // tra ve 1 mang moi neu
                 nextTodoId: todos.nextTodoId
             };
-        case 'SHOW_COMPLETED':
+        case 'LIST_COMPLETED':
             return {
                 todos: todos.todos.filter(todo => todo.completed),
                 nextTodoId: todos.nextTodoId
@@ -31,6 +31,7 @@ class TodoList extends Component{
         )
     }
 }
+//cây state thay đổi thì sẽ trả về cho TodoList một data là kết quả của function filter(state.todos, state.visible_filter).
 const mapStateToProps = (state, ownprops) => {
     return filter(state.todos,state.visible_filter)
 };
