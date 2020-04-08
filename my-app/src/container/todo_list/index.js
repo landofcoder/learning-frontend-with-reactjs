@@ -8,7 +8,7 @@ const filter = (todos,filter) => {
             return todos;
         case 'LIST_ACTIVE':
             return {
-                todos: todos.todos.filter(todo => !todo.completed), // tra ve 1 mang moi neu
+                todos: todos.todos.filter(todo => !todo.completed),
                 nextTodoId: todos.nextTodoId
             };
         case 'LIST_COMPLETED':

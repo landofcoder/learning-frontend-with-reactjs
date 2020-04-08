@@ -1,22 +1,15 @@
 import * as types from '../constants';
 
-export function sumCalc() {
+export function output() {
     return {
-        type: types.SUM_CALC
+        type: types.OUTPUT
     }
 }
 
-export function changeNumberAPassword(payload) {
+export function input(text) {
     return {
-        type: types.CHANGE_NUMBER_A_PASSWORD,
-        payload
-    }
-}
-
-export function changeNumberBPassword(payload) {
-    return {
-        type: types.CHANGE_NUMBER_B_PASSWORD,
-        payload
+        type: types.INPUT,
+        text
     }
 }
 

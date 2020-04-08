@@ -1,5 +1,4 @@
-export const SUM_CALC = 'SUM_CALC';
-export const CHANGE_NUMBER_A_PASSWORD = 'CHANGE_NUMBER_A_PASSWORD';
-export const CHANGE_NUMBER_B_PASSWORD = 'CHANGE_NUMBER_B_PASSWORD';
+export const OUTPUT = 'OUTPUT';
+export const INPUT = 'INPUT';
 export const GET_API_LIST = 'GET_API_LIST';
 export const RECEIVED_DATA_LIST = 'RECEIVED_DATA_LIST';
