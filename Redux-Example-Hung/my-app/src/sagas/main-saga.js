@@ -5,9 +5,10 @@ import {checkDiscountProcessService,} from './service';
 function* getApiList() {
     const payload = {testParam: 1};
     const result = yield call(checkDiscountProcessService, payload);
-    console.log('result:', result);
+    const data = result.data;
+    console.log('result:', data);
     // push data to reducer
-    yield put({type: types.RECEIVED_DATA_LIST, result});
+    yield put({type: types.RECEIVED_DATA_LIST, payload: data});
 }
 
 function* mainSaga() {

@@ -1,4 +1,15 @@
 export const OUTPUT = 'OUTPUT';
 export const INPUT = 'INPUT';
+export const INPUT_NAME = 'INPUT_NAME';
+export const INPUT_SALARY = 'INPUT_SALARY';
+export const INPUT_AGE = 'INPUT_AGE';
 export const GET_API_LIST = 'GET_API_LIST';
 export const RECEIVED_DATA_LIST = 'RECEIVED_DATA_LIST';
+export const GET_DETAILS = 'GET_DETAILS';
+export const DELETE_SUCCESS = 'DELETE_SUCCESS';
+export const ADD_SUCCESS = 'ADD_SUCCESS';
+export const SAVE = 'SAVE';
+export const INPUT_UPDATE_ID = 'INPUT_UPDATE_ID';
+export const INPUT_UPDATE_NAME = 'INPUT_UPDATE_NAME';
+export const INPUT_UPDATE_SALARY = 'INPUT_UPDATE_SALARY';
+export const INPUT_UPDATE_AGE = 'INPUT_UPDATE_AGE'

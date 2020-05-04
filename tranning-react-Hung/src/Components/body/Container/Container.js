@@ -44,8 +44,6 @@ class Container extends Component {
     onChangeValue = event => {
         this.setState({value: event.target.value});
     };
-
-
     onChangeId = event => {
         const {name, value} = event.target;
         this.setState({id: event.target.value})
